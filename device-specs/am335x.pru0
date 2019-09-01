@@ -1,0 +1,5 @@
+*cpp_device:
+-D__AM335X_PRU0__ -D__AM335X_
+
+*link_device:
+%{!r:-Tpruelf-am335x.pru0.x}

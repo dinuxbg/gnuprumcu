@@ -1,0 +1,5 @@
+*cpp_device:
+-D__AM437X_ICSS0_PRU0__ -D__AM437X_ICSS0__ -D__AM437X__
+
+*link_device:
+%{!r:-Tpruelf-am437x.icss0.pru0.x}
