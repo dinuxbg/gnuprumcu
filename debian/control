@@ -10,7 +10,7 @@ Homepage: https://gitlab.com/dinuxbg/gnuprumcu
 
 Package: gnuprumcu
 Architecture: any
-# Depends: none so far
+Depends: ${misc:Depends}
 Description: Linker scripts and device specs for PRU MCU variants
  This package contains the linker scripts, device specs and I/O headers
  for the different PRU variants in different TI SoCs. Install this package
