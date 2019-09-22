@@ -27,6 +27,9 @@ dnl THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 AC_INIT(gnuprumcu, 0.2.0-rc1)
 
+dnl Not sure why this has to be so early.
+AC_CANONICAL_TARGET
+
 AM_INIT_AUTOMAKE(foreign)
 
 dnl create a config.h file (Automake will add -DHAVE_CONFIG_H)
@@ -56,5 +59,16 @@ AC_FUNC_ALLOCA
 dnl Checks for typedefs, structures, and compiler characteristics.
 
 dnl Checks for library functions.
+
+dnl Sanity checks
+case "$target" in
+  pru-*-elf)
+    AC_MSG_NOTICE([Building for pru target. Good.])
+    ;;
+  *)
+    AC_MSG_ERROR([Please specify "--target=pru" option to configure.])
+    ;;
+esac
+
 
 AC_OUTPUT(Makefile include/Makefile ldscripts/Makefile device-specs/Makefile)
