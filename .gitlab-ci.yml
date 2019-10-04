@@ -1,0 +1,24 @@
+image: debian:unstable
+ 
+# TODO - when we'll need pru-gcc dependency?
+before_script:
+  - apt update -qq
+  - apt install -y -qq build-essential autoconf automake
+ 
+stages:
+  - build
+ 
+build-distcheck:
+  stage: build
+  script:
+    - autoreconf -vfi
+    - mkdir build
+    - cd build
+    - ../configure --target=pru
+    - make
+    - DISTCHECK_CONFIGURE_FLAGS=--target=pru make distcheck
+ 
+  # The files which are to be made available in GitLab
+  artifacts:
+    paths:
+      - build/gnuprumcu-*.tar.gz
