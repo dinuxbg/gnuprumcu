@@ -1,3 +1,5 @@
+![build status](https://gitlab.com/dinuxbg/gnuprumcu/badges/master/pipeline.svg)
+
 # Linker scripts and device specs for PRU MCU variants
 
 ## Introduction
