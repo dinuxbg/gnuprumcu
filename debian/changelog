@@ -1,3 +1,9 @@
+gnuprumcu (0.2.0-1) unstable; urgency=medium
+
+  *  Minor build system improvements
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Fri, 08 Nov 2019 21:33:49 +0200
+
 gnuprumcu (0.1.0-1) unstable; urgency=medium
 
   * Initial release.
