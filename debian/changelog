@@ -1,4 +1,10 @@
-gnuprumcu (0.2.0-1) unstable; urgency=medium
+gnuprumcu (0.2.1) unstable; urgency=medium
+
+  * Debian build scripts updates. 
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Sat, 09 Nov 2019 12:08:13 +0200
+
+gnuprumcu (0.2.0) unstable; urgency=medium
 
   *  Minor build system improvements
 

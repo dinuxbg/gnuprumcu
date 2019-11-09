@@ -24,3 +24,5 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 SUBDIRS = include ldscripts device-specs
+
+EXTRA_DIST = debian
