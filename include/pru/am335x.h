@@ -42,7 +42,7 @@
 #define __IEP_BASE			0x0002E000
 #define __ECAP0_BASE			0x00030000
 #define __MII_RT_CFG_BASE		0x00032000
-#define __MII_MDIO_BASE			0x00034000
+#define __MII_MDIO_BASE			0x00032400
 #define __SYS_OCP_HP0_BASE		0x00080000
 
 /* ====================== CTABLE base addresses ====================== */
@@ -59,7 +59,7 @@
 #pragma ctable_entry 10 0x48318000
 #pragma ctable_entry 11 0x48022000
 #pragma ctable_entry 12 0x48024000
-#pragma ctable_entry 13 0x48318000
+#pragma ctable_entry 13 0x48310000
 #pragma ctable_entry 14 0x481cc000
 #pragma ctable_entry 15 0x481d0000
 #pragma ctable_entry 16 0x481a0000
@@ -255,7 +255,7 @@ struct __PRU_INTC_CR_S {
 
 struct __PRU_INTC_GER_S {
 	volatile unsigned int ENABLE_HINT_ANY		: 1;
-	volatile unsigned int __reserved_2		: 30;
+	volatile unsigned int __reserved_2		: 31;
 };
 
 
