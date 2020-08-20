@@ -119,6 +119,8 @@ static inline void __halt(void)
 #  include <pru/am335x.h>
 #elif defined(__SIM__)
    /* perhaps warn? */
+#elif defined(__AM572X_ICSS0_PRU0__) || defined(__AM572X_ICSS1_PRU0__) || defined(__AM572X_ICSS0_PRU1__) || defined(__AM572X_ICSS1_PRU1__)
+#  include <pru/am572x.h>
 #else
 #  warning "No matching PRU instance variant found for <pru/io.h>"
 #endif
