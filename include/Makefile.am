@@ -27,4 +27,5 @@ prudir = $(prefix)/pru/include
 
 nobase_pru_HEADERS = \
     pru/am335x.h \
+    pru/am572x.h \
     pru/io.h
