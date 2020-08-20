@@ -26,6 +26,14 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+/*
+ * Updated according to AM335x TRM Revision3
+ * Literature Number: SPRUH73Q
+ * October 2011 – Revised December 2019
+ *
+ * Copyright (c) 2020 Vedant Paranjape
+ */
+
 #ifndef __PRU_AM335X_H__
 #define __PRU_AM335X_H__
 
@@ -85,7 +93,7 @@
 
 struct __PRU_CONTROL_S {
 	const volatile unsigned int SOFT_RST_N		: 1;
-	volatile unsigned int ENABLE			: 1;
+	volatile unsigned int EN			: 1;
 	volatile unsigned int SLEEPING			: 1;
 	volatile unsigned int COUNTER_ENABLE		: 1;
 	volatile unsigned int __reserved_1		: 4;
@@ -97,8 +105,8 @@ struct __PRU_CONTROL_S {
 };
 
 struct __PRU_STATUS_S {
-	volatile unsigned int PCOUNTER			: 16;
-	volatile unsigned int __reserved_1		: 16;
+	const volatile unsigned int PCTR		: 16;
+	const volatile unsigned int __reserved_1	: 16;
 };
 
 struct __PRU_CTBIR0_S {
@@ -249,12 +257,13 @@ struct __PRU_INTC_REVID_S {
 struct __PRU_INTC_CR_S {
 	volatile unsigned int __reserved_1		: 2;
 	volatile unsigned int NEST_MODE			: 2;
-	volatile unsigned int __reserved_2		: 28;
+	const volatile unsigned int __reserved_2	: 1;
+	volatile unsigned int __reserved_3		: 27;
 };
 
 
 struct __PRU_INTC_GER_S {
-	volatile unsigned int ENABLE_HINT_ANY		: 1;
+	volatile unsigned int EN_HINT_ANY		: 1;
 	volatile unsigned int __reserved_2		: 31;
 };
 
@@ -267,37 +276,37 @@ struct __PRU_INTC_GNLR_S {
 
 
 struct __PRU_INTC_SISR_S {
-	volatile unsigned int STATUS_SET_INDEX		: 10;
+	volatile unsigned int STS_SET_IDX		: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
 
 struct __PRU_INTC_SICR_S {
-	volatile unsigned int STATUS_CLR_INDEX		: 10;
+	volatile unsigned int STS_CLR_IDX		: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
 
 struct __PRU_INTC_EISR_S {
-	volatile unsigned int STATUS_SET_INDEX		: 10;
+	volatile unsigned int EN_SET_IDX		: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
 
 struct __PRU_INTC_EICR_S {
-	volatile unsigned int STATUS_CLR_INDEX		: 10;
+	volatile unsigned int EN_CLR_IDX		: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
 
 struct __PRU_INTC_HIEISR_S {
-	volatile unsigned int HINT_ENABLE_SET_INDEX	: 10;
+	volatile unsigned int HINT_EN_SET_IDX		: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
 
 struct __PRU_INTC_HIDISR_S {
-	volatile unsigned int HINT_ENABLE_CLR_INDEX	: 10;
+	volatile unsigned int HINT_EN_CLR_IDX		: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
@@ -335,7 +344,7 @@ struct __PRU_INTC_HINLR_S {
 };
 
 struct __PRU_INTC_HIER_S {
-	volatile unsigned int ENABLE_HINT		: 10;
+	volatile unsigned int EN_HINT			: 10;
 	volatile unsigned int __reserved_1		: 22;
 };
 
@@ -590,7 +599,6 @@ struct __PRU_INTC {
 #define PRU_CFG_ISP_OFFS		0x18
 #define PRU_CFG_IESP_OFFS		0x1c
 #define PRU_CFG_IECP_OFFS		0x20
-#define PRU_CFG_SCRP_OFFS		0x24
 #define PRU_CFG_PMAO_OFFS		0x28
 #define PRU_CFG_MII_RT_OFFS		0x2c
 #define PRU_CFG_IEPCLK_OFFS		0x30
@@ -647,28 +655,6 @@ struct __PRU_CFG_ISPx_S {
 	volatile unsigned int PRU1_DMEM_PE		: 4;
 	volatile unsigned int RAM_PE			: 4;
 	volatile unsigned int __reserved_1		: 12;
-};
-
-struct __PRU_CFG_SCRP_S {
-	volatile unsigned int SCRP_1			: 2;
-	volatile unsigned int SCRP_2			: 2;
-	volatile unsigned int SCRP_3			: 2;
-	volatile unsigned int SCRP_4			: 2;
-	volatile unsigned int SCRP_5			: 1;
-	volatile unsigned int SCRP_6			: 1;
-	volatile unsigned int SCRP_7			: 1;
-	volatile unsigned int SCRP_8			: 1;
-	volatile unsigned int SCRP_9			: 1;
-	volatile unsigned int SCRP_10			: 1;
-	volatile unsigned int SCRP_11			: 1;
-	volatile unsigned int SCRP_12			: 1;
-	volatile unsigned int SCRP_13			: 1;
-	volatile unsigned int SCRP_14			: 1;
-	volatile unsigned int SCRP_15			: 1;
-	volatile unsigned int SCRP_16			: 1;
-	volatile unsigned int SCRP_17			: 1;
-	volatile unsigned int SCRP_18			: 1;
-	volatile unsigned int __reserved_1		: 10;
 };
 
 struct __PRU_CFG_PMAO_S {
@@ -742,10 +728,7 @@ struct __PRU_CFG {
 		volatile unsigned int IECP;
 		struct __PRU_CFG_ISPx_S IECP_bit;
 	};
-	union {
-		volatile unsigned int SCRP;
-		struct __PRU_CFG_SCRP_S SCRP_bit;
-	};
+	unsigned int ___reserved1[1];
 	union {
 		volatile unsigned int PMAO;
 		struct __PRU_CFG_PMAO_S PMAO_bit;
