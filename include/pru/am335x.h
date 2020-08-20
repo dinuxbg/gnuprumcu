@@ -194,7 +194,7 @@ struct __PRU_CTRL {
 #define PRU_INTC_SECR0_OFFS		0x280
 #define PRU_INTC_SECR1_OFFS		0x284
 #define PRU_INTC_ESR0_OFFS		0x300
-#define PRU_INTC_ESR1_OFFS		0x304
+#define PRU_INTC_ERS1_OFFS		0x304
 #define PRU_INTC_ECR0_OFFS		0x380
 #define PRU_INTC_ECR1_OFFS		0x384
 #define PRU_INTC_CMR0_OFFS		0x400
@@ -405,7 +405,7 @@ struct __PRU_INTC {
 	volatile unsigned int SECR1;
 	unsigned int __gap7[30];
 	volatile unsigned int ESR0;
-	volatile unsigned int ESR1;
+	volatile unsigned int ERS1;
 	unsigned int __gap8[30];
 	volatile unsigned int ECR0;
 	volatile unsigned int ECR1;
