@@ -27,9 +27,12 @@
  */
 
 /* 
-* Updated according to AM335x TRM Rev3
-* 2020 Vedant Paranjape
-*/
+ * Updated according to AM335x TRM Revision3
+ * Literature Number: SPRUH73Q
+ * October 2011 – Revised December 2019
+ * 
+ * Copyright (c) 2020 Vedant Paranjape
+ */
 
 #ifndef __PRU_AM335X_H__
 #define __PRU_AM335X_H__
