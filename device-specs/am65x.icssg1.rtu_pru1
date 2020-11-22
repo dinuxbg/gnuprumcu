@@ -1,0 +1,5 @@
+*cpp_device:
+-D__AM65X_ICSSG1_RTU_PRU1__ -D__AM65X_ICSSG1__ -D__AM65X__
+
+*link_device:
+%{!r:-Tpruelf-am65x.icssg1.rtu_pru1.x}

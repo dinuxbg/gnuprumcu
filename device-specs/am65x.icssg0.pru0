@@ -1,0 +1,5 @@
+*cpp_device:
+-D__AM65X_ICSSG0_PRU0__ -D__AM65X_ICSSG0__ -D__AM65X__
+
+*link_device:
+%{!r:-Tpruelf-am65x.icssg0.pru0.x}

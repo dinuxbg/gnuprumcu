@@ -25,15 +25,6 @@
 
 
 dist_pru_DATA = \
-    am335x.pru0 \
-    am335x.pru1 \
-    am437x.icss0.pru0 \
-    am437x.icss0.pru1 \
-    am437x.icss1.pru0 \
-    am437x.icss1.pru1 \
-    am572xx.icss0.pru0 \
-    am572xx.icss0.pru1 \
-    am572xx.icss1.pru0 \
-    am572xx.icss1.pru1
+    am*pru*
 
 prudir = $(exec_prefix)/$(target_alias)/lib/device-specs
