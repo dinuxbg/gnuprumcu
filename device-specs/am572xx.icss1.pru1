@@ -1,5 +1,0 @@
-*cpp_device:
--D__AM572X_ICSS1_PRU1__ -D__AM572X_ICSS1__ -D__AM572X__
-
-*link_device:
-%{!r:-Tpruelf-am572x.icss1.pru1.x}
