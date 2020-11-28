@@ -26,3 +26,6 @@
 SUBDIRS = include ldscripts device-specs
 
 EXTRA_DIST = debian
+
+# Needed for "make distcheck"
+DISTCHECK_CONFIGURE_FLAGS = --target=pru
