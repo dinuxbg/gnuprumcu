@@ -82,10 +82,11 @@ BEGIN { COMMENT_MARKER = 0; }
 dump_modified 8K   8K     "32"         "512"       | tee pruelf-am335x.pru0.x
 dump_modified 8K   8K     "32"         "512"       | tee pruelf-am335x.pru1.x
 
+# SPRUHL7I, 30.1.1, Features
 dump_modified 4K   4K     "32"         "256"       | tee pruelf-am437x.icss0.pru0.x
 dump_modified 4K   4K     "32"         "256"       | tee pruelf-am437x.icss0.pru1.x
-dump_modified 8K   8K     "32"         "512"       | tee pruelf-am437x.icss1.pru0.x
-dump_modified 8K   8K     "32"         "512"       | tee pruelf-am437x.icss1.pru1.x
+dump_modified 12K  8K     "32"         "512"       | tee pruelf-am437x.icss1.pru0.x
+dump_modified 12K  8K     "32"         "512"       | tee pruelf-am437x.icss1.pru1.x
 
 # SPRUHZ6L, 30.1.1.1, PRU-ICSS Key Features for SR2.0.
 # SR1.0 is assumed deprecated.

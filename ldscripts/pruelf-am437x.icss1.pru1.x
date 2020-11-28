@@ -7,7 +7,7 @@ OUTPUT_FORMAT("elf32-pru","elf32-pru","elf32-pru")
 OUTPUT_ARCH(pru)
 MEMORY
 {
-  imem   (x)   : ORIGIN = 0x20000000, LENGTH = 8K
+  imem   (x)   : ORIGIN = 0x20000000, LENGTH = 12K
   dmem   (rw!x) : ORIGIN = 0x0, LENGTH = 8K
 }
 __HEAP_SIZE = DEFINED(__HEAP_SIZE) ? __HEAP_SIZE : 32 ;
