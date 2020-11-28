@@ -1,3 +1,11 @@
+gnuprumcu (0.4.0) unstable; urgency=medium
+
+  * Added am65x linker scripts.
+  * Fixed am572x device spec names.
+  * Fixed am437x IMEM size for ICSS1.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Sat, 28 Nov 2020 10:02:00 +0200
+
 gnuprumcu (0.3.0) unstable; urgency=medium
 
   * Aligned am335x.h to latest TRM. THIS MAY BREAK SOURCE BUILDS FOR USER FIRMWARE!
