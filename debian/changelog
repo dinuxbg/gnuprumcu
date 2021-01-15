@@ -1,3 +1,9 @@
+gnuprumcu (0.5.0) unstable; urgency=medium
+
+  * Add TDA4VM device specs and linker scripts.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Fri, 15 Jan 2021 21:18:27 +0200
+
 gnuprumcu (0.4.0) unstable; urgency=medium
 
   * Added am65x linker scripts.
