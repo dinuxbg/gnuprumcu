@@ -32,6 +32,18 @@ dist_pru_DATA = \
     am65x.icssg2.rtu_pru0 \
     am65x.icssg2.rtu_pru1 \
     am65x.icssg2.tx_pru0 \
-    am65x.icssg2.tx_pru1
+    am65x.icssg2.tx_pru1 \
+    tda4vm.icssg0.pru0 \
+    tda4vm.icssg0.pru1 \
+    tda4vm.icssg0.rtu_pru0 \
+    tda4vm.icssg0.rtu_pru1 \
+    tda4vm.icssg0.tx_pru0 \
+    tda4vm.icssg0.tx_pru1 \
+    tda4vm.icssg1.pru0 \
+    tda4vm.icssg1.pru1 \
+    tda4vm.icssg1.rtu_pru0 \
+    tda4vm.icssg1.rtu_pru1 \
+    tda4vm.icssg1.tx_pru0 \
+    tda4vm.icssg1.tx_pru1
 
 prudir = $(exec_prefix)/$(target_alias)/lib/device-specs

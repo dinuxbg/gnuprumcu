@@ -1,0 +1,5 @@
+*cpp_device:
+-D__TDA4VM_ICSSG0_PRU1__ -D__TDA4VM_ICSSG0__ -D__TDA4VM__
+
+*link_device:
+%{!r:-Tpruelf-tda4vm.icssg0.pru1.x}

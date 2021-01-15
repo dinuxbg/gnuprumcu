@@ -108,4 +108,16 @@ do
   done
 done
 
+# SPRUIL1B, 6.6.1.1 PRU_ICSSG Key Features
+for icss in icssg0 icssg1
+do
+  for prui in 0 1
+  do
+    #             IMEM DMEM   HEAP_SIZE    STACK_SIZE
+    dump_modified 12K  8K     "32"         "512"       | tee pruelf-tda4vm.${icss}.pru${prui}.x
+    dump_modified 8K   0K     "0"          "0"         | del_nullprot | tee pruelf-tda4vm.${icss}.rtu_pru${prui}.x
+    dump_modified 6K   0K     "0"          "0"         | del_nullprot | tee pruelf-tda4vm.${icss}.tx_pru${prui}.x
+  done
+done
+
 # dump_modified 256K 65536K "32 * 1024 * 1024" "1024 * 1024" | tee pruelf-sim.x

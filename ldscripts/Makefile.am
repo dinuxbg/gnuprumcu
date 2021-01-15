@@ -32,6 +32,19 @@ dist_pru_DATA = \
     pruelf-am65x.icssg2.rtu_pru0.x \
     pruelf-am65x.icssg2.rtu_pru1.x \
     pruelf-am65x.icssg2.tx_pru0.x \
-    pruelf-am65x.icssg2.tx_pru1.x
+    pruelf-am65x.icssg2.tx_pru1.x \
+    pruelf-tda4vm.icssg0.pru0.x \
+    pruelf-tda4vm.icssg0.pru1.x \
+    pruelf-tda4vm.icssg0.rtu_pru0.x \
+    pruelf-tda4vm.icssg0.rtu_pru1.x \
+    pruelf-tda4vm.icssg0.tx_pru0.x \
+    pruelf-tda4vm.icssg0.tx_pru1.x \
+    pruelf-tda4vm.icssg1.pru0.x \
+    pruelf-tda4vm.icssg1.pru1.x \
+    pruelf-tda4vm.icssg1.rtu_pru0.x \
+    pruelf-tda4vm.icssg1.rtu_pru1.x \
+    pruelf-tda4vm.icssg1.tx_pru0.x \
+    pruelf-tda4vm.icssg1.tx_pru1.x
+
 
 prudir = $(exec_prefix)/$(target_alias)/lib
