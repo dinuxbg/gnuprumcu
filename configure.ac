@@ -51,4 +51,4 @@ case "$target" in
 esac
 
 
-AC_OUTPUT(Makefile include/Makefile ldscripts/Makefile device-specs/Makefile)
+AC_OUTPUT(Makefile include/Makefile device-specs/Makefile)

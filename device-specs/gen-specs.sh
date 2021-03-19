@@ -32,7 +32,12 @@ gen_spec()
   done
 }
 
-gen_spec am437x "icss0 icss1" "pru0 pru1"
+echo TODO TODO
+exit 1
+
+#               IMEM DMEM HEAP  STACK_SIZE
+gen_spec am335x 8K   8K   "32"  "512" "icss0 icss1" "pru0 pru1"
+gen_spec am437x 8K   8K   "32"  "512" "icss0 icss1" "pru0 pru1"
 gen_spec am572x "icss0 icss1" "pru0 pru1"
 gen_spec am65x "icssg0 icssg1 icssg2" "pru0 pru1 rtu_pru0 rtu_pru1 tx_pru0 tx_pru1"
 gen_spec tda4vm "icssg0 icssg1" "pru0 pru1 rtu_pru0 rtu_pru1 tx_pru0 tx_pru1"

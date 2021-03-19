@@ -2,4 +2,4 @@
 -D__AM335X_PRU0__ -D__AM335X_
 
 *link_device:
-%{!r:-Tpruelf-am335x.pru0.x}
+%{!r:--defsym=__IMEM_SIZE=0x2000 --defsym=__DMEM_SIZE=0x2000 --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512}
