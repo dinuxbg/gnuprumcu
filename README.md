@@ -11,14 +11,14 @@ Install this package to allow the "-mmcu=" GCC compiler option to pick the corre
 The autoconf and automake tools are needed to bootstrap the build scripts.
 
 	autoreconf -vfi
-	./configure --prefix=/usr/local --target=pru
+	./configure --prefix=/usr/local --host=pru
 	make
 	make install
 
 ## Building from a released tarball
 Use the standard configure and make steps.
 
-	./configure --prefix=/usr/local --target=pru
+	./configure --prefix=/usr/local --host=pru
 	make
 	make install
 

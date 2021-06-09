@@ -38,15 +38,42 @@ AC_FUNC_ALLOCA
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 
+dnl Not sure why configure picks system compiler, even when --host=pru
+case "x`${CC} -dumpmachine`x" in
+  xpru-elfx) ;;
+  xprux) ;;
+  *) AC_MSG_ERROR([C compiler is not targeting PRU. Please check your PATH.]) ;;
+esac
+
+dnl Check if compiler is working
+AC_LINK_IFELSE([AC_LANG_PROGRAM([],[])],
+    [AC_MSG_NOTICE([CC works.])], [AC_MSG_ERROR([CC cannot cross-compile a program.])])
+
+dnl Check if we're running with recent-enough binutils.
+AC_LINK_IFELSE([AC_LANG_PROGRAM([
+#include <stdio.h>
+    extern int __IMEM_SIZE;], [
+    return (int)&__IMEM_SIZE > 0x100;
+    ])],  [ld_suppports_dynamic_sizes="yes"], [ld_suppports_dynamic_sizes="no"])
+
 dnl Checks for library functions.
 
 dnl Sanity checks
-case "$target" in
+case "$host" in
   pru-*-elf)
-    AC_MSG_NOTICE([Building for pru target. Good.])
+    AC_MSG_NOTICE([Building for pru host. Good.])
     ;;
   *)
-    AC_MSG_ERROR([Please specify "--target=pru" option to configure.])
+    AC_MSG_ERROR([Please specify "--host=pru" option to configure.])
+    ;;
+esac
+
+case "$ld_suppports_dynamic_sizes" in
+  yes)
+    AC_MSG_NOTICE([Binutils is recent enough.])
+    ;;
+  *)
+    AC_MSG_ERROR([Please upgrade Binutils to at least version 2.37.])
     ;;
 esac
 
