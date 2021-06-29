@@ -14,9 +14,9 @@ build-distcheck:
     - autoreconf -vfi
     - mkdir build
     - cd build
-    - ../configure --host=pru
+    - ../configure --host=pru --without-toolchain-check
     - make
-    - DISTCHECK_CONFIGURE_FLAGS=--host=pru make distcheck
+    - DISTCHECK_CONFIGURE_FLAGS="--host=pru --without-toolchain-check" make distcheck
  
   # The files which are to be made available in GitLab
   artifacts:

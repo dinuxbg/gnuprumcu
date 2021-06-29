@@ -38,6 +38,16 @@ AC_FUNC_ALLOCA
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 
+AC_ARG_WITH([toolchain-check],
+	    [AS_HELP_STRING([--without-toolchain-check],
+			    [disable pru toolchain verification])],
+	    [],
+	    [with_toolchain_check=yes])
+
+dnl ==========================================================================
+AS_IF([test "x$with_toolchain_check" != xno],
+      [
+
 dnl Not sure why configure picks system compiler, even when --host=pru
 case "x`${CC} -dumpmachine`x" in
   xpru-elfx) ;;
@@ -55,6 +65,11 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([
     extern int __IMEM_SIZE;], [
     return (int)&__IMEM_SIZE > 0x100;
     ])],  [ld_suppports_dynamic_sizes="yes"], [ld_suppports_dynamic_sizes="no"])
+
+     ],
+     [ld_suppports_dynamic_sizes="yes"])
+
+dnl ==========================================================================
 
 dnl Checks for library functions.
 
