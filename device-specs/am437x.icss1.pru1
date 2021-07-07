@@ -2,4 +2,4 @@
 -D__AM437X_ICSS1_PRU1__ -D__AM437X_ICSS1__ -D__AM437X__
 
 *link_device:
-%{!r:-Tpruelf-am437x.icss1.pru1.x}
+%{!r:--defsym=__IMEM_SIZE=12K --defsym=__DMEM_SIZE=8K --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512}

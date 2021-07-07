@@ -15,6 +15,18 @@ dist_pru_DATA = \
     am572x.icss0.pru1 \
     am572x.icss1.pru0 \
     am572x.icss1.pru1 \
+    am64x.icssg0.pru0 \
+    am64x.icssg0.pru1 \
+    am64x.icssg0.rtu_pru0 \
+    am64x.icssg0.rtu_pru1 \
+    am64x.icssg0.tx_pru0 \
+    am64x.icssg0.tx_pru1 \
+    am64x.icssg1.pru0 \
+    am64x.icssg1.pru1 \
+    am64x.icssg1.rtu_pru0 \
+    am64x.icssg1.rtu_pru1 \
+    am64x.icssg1.tx_pru0 \
+    am64x.icssg1.tx_pru1 \
     am65x.icssg0.pru0 \
     am65x.icssg0.pru1 \
     am65x.icssg0.rtu_pru0 \

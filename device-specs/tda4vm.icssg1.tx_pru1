@@ -2,4 +2,4 @@
 -D__TDA4VM_ICSSG1_TX_PRU1__ -D__TDA4VM_ICSSG1__ -D__TDA4VM__
 
 *link_device:
-%{!r:-Tpruelf-tda4vm.icssg1.tx_pru1.x}
+%{!r:--defsym=__IMEM_SIZE=6K --defsym=__DMEM_SIZE=0 --defsym=__HEAP_SIZE=0 --defsym=__STACK_SIZE=0}

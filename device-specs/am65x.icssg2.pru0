@@ -2,4 +2,4 @@
 -D__AM65X_ICSSG2_PRU0__ -D__AM65X_ICSSG2__ -D__AM65X__
 
 *link_device:
-%{!r:-Tpruelf-am65x.icssg2.pru0.x}
+%{!r:--defsym=__IMEM_SIZE=12K --defsym=__DMEM_SIZE=8K --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512}

@@ -1,5 +1,5 @@
 *cpp_device:
--D__AM65X_ICSSG1_TX_PRU0__ -D__AM65X_ICSSG1__ -D__AM65X__
+-D__AM64X_ICSSG1_TX_PRU0__ -D__AM64X_ICSSG1__ -D__AM64X__
 
 *link_device:
 %{!r:--defsym=__IMEM_SIZE=6K --defsym=__DMEM_SIZE=0 --defsym=__HEAP_SIZE=0 --defsym=__STACK_SIZE=0}
