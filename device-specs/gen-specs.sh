@@ -4,7 +4,16 @@
 # AM4, AM5 and AM6 have way too many variants to maintain
 # them manually.
 
+set -e
 
+# Generate spec file for one PRU core variant.
+#   soc        : SoC name (e.g. am335x)
+#   icss       : ICSS subsystem name (e.g. icssg0)
+#   core       : Core name inside ICSS (e.g. pru0, tx_pru1)
+#   imem_size  : IMEM size.
+#   dmem_size  : DMEM size.
+#   heap_size  : Default heap (dynamic memory pool for malloc) size.
+#   stack_size : Default stack size.
 gen_spec()
 {
   local soc=${1}
@@ -33,6 +42,7 @@ gen_spec()
   echo "%{!r:--defsym=__IMEM_SIZE=${imem_size} --defsym=__DMEM_SIZE=${dmem_size} --defsym=__HEAP_SIZE=${heap_size} --defsym=__STACK_SIZE=${stack_size}}" >> "${outf}"
 }
 
+# SPRUH73Q, 4.1.1, Features
 for c in pru0 pru1; do
   gen_spec am335x "" $c 8K 8K 32 512
 done
