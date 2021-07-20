@@ -2,4 +2,4 @@
 -D__AM572X_ICSS0_PRU0__ -D__AM572X_ICSS0__ -D__AM572X__
 
 *link_device:
-%{!r:--defsym=__IMEM_SIZE=12K --defsym=__DMEM_SIZE=8K --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512}
+%{!r:--gc-sections --defsym=__IMEM_SIZE=12K --defsym=__DMEM_SIZE=8K --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512}

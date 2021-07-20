@@ -39,7 +39,7 @@ gen_spec()
   echo "${line^^[a-z]}" >> "${outf}"
   echo >> "${outf}"
   echo '*link_device:' >> "${outf}"
-  echo "%{!r:--defsym=__IMEM_SIZE=${imem_size} --defsym=__DMEM_SIZE=${dmem_size} --defsym=__HEAP_SIZE=${heap_size} --defsym=__STACK_SIZE=${stack_size}}" >> "${outf}"
+  echo "%{!r:--gc-sections --defsym=__IMEM_SIZE=${imem_size} --defsym=__DMEM_SIZE=${dmem_size} --defsym=__HEAP_SIZE=${heap_size} --defsym=__STACK_SIZE=${stack_size}}" >> "${outf}"
 }
 
 # SPRUH73Q, 4.1.1, Features
