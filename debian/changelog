@@ -1,3 +1,12 @@
+gnuprumcu (0.6.0) unstable; urgency=medium
+
+  * Require Binutils at least version 2.37.
+  * Require pru-gcc to be installed.
+  * Remove linker scripts. Instead set memory sizes from specs.
+  * Activate --gc-sections linker option by default.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Fri, 24 Jul 2021 22:11:58 +0200
+
 gnuprumcu (0.5.0) unstable; urgency=medium
 
   * Add TDA4VM device specs and linker scripts.
