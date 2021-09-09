@@ -29,7 +29,18 @@
 #ifndef __PRU_IO_H__
 #define __PRU_IO_H__
 
+#if __GNUC__ < 11
+/* __halt builtin was introduced with GCC 11. */
+static inline void __halt(void)
+{
+	asm volatile ("halt" : : : "memory");
+}
+#endif	/* __GNUC__ < 11 */
 
+
+#if __GNUC__ < 12 || defined (__cplusplus)
+
+/* Prior to GCC 12 there was no __regio_symbol address space. */
 static inline void write_r30(unsigned int val)
 {
 	asm volatile ("mov\tr30, %0" : : "r"(val));
@@ -59,6 +70,10 @@ static inline unsigned int read_r31(void)
 /*
  * Elegant accessors for C++ users. Use __R30 and __R31 as normal
  * LHS and RHS variables to respectively read and write to R30/R31.
+ *
+ * Even though GCC 12 introduced __regio_symbol for its C frontend,
+ * named address spaces are still not available for the C++ frontend.
+ * Hence we must still rely on write_r3x/read_r3x accessors.
  */
 class __R30_type {
 public:
@@ -85,10 +100,29 @@ __R31_type __R31 __attribute__((weak));
 
 #endif	/* __cplusplus */
 
-static inline void __halt(void)
-{
-	asm volatile ("halt" : : : "memory");
-}
+#else	/* __GNUC__ >= 12 && !defined (__cplusplus) */
+
+/*
+ * GCC 12 C frontend introduced "fake" address spaces to access the
+ * R30 and R31 I/O CPU registers.
+ *
+ * If used correctly, the compiler should never create DRAM references
+ * to these fake variables. Correct usage will result in "mov R30, rX"
+ * and "mov rX, R30" statements.
+ *
+ * Do not use "asm volatile" register variables!
+ * See https://gcc.gnu.org/ml/gcc-patches/2015-01/msg02241.html
+ */
+extern volatile __regio_symbol unsigned int __R30;
+extern volatile __regio_symbol unsigned int __R31;
+
+/* For backwards compatibility with existing user source code. */
+static inline void write_r30(unsigned int val) { __R30 = val; }
+static inline void write_r31(unsigned int val) { __R31 = val; }
+static inline unsigned int read_r30(void) { return __R30; }
+static inline unsigned int read_r31(void) { return __R31; }
+
+#endif	/* __GNUC__ < 12 || defined (__cplusplus) */
 
 #define PRU_R31_INTR_IN1_BIT		31
 #define PRU_R31_INTR_IN1_MASK		(1u << 31)
