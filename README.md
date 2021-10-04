@@ -1,9 +1,9 @@
 ![build status](https://gitlab.com/dinuxbg/gnuprumcu/badges/master/pipeline.svg)
 
-# Linker scripts and device specs for PRU MCU variants
+# Device specs and I/O headers for PRU MCU variants
 
 ## Introduction
-This package contains the linker scripts, device specs and I/O headers for the different PRU variants in different TI SoCs.
+This package contains the device specs and I/O headers for the different PRU variants in different TI SoCs.
 
 Install this package to allow the "-mmcu=" GCC compiler option to pick the correct settings for your board.
 
