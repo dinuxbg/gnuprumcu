@@ -1,3 +1,9 @@
+gnuprumcu (0.7.0) unstable; urgency=medium
+
+  * Add definitions for direct access to __R30 and __R31.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Fri, 10 Dec 2021 22:16:58 +0200
+
 gnuprumcu (0.6.0) unstable; urgency=medium
 
   * Require Binutils at least version 2.37.
