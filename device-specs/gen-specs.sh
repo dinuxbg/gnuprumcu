@@ -63,6 +63,11 @@ for i in icss0 icss1; do
   done
 done
 
+# SPRUIV7 – DECEMBER 2021, 6.4.1., PRUSS-M Overview
+for c in pru0 pru1; do
+  gen_spec am62x "" $c 12K 8K 32 512
+done
+
 # SPRUIM2B, 6.4.1.1 PRU_ICSSG Key Features
 for i in icssg0 icssg1; do
   for c in 0 1; do
