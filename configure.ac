@@ -5,7 +5,7 @@ dnl
 dnl Copyright 2018-2021 Dimitar Dimitrov <dimitar@dinux.eu>
 dnl All rights reserved.
 
-AC_INIT(gnuprumcu, 0.7.0)
+AC_INIT([gnuprumcu],[0.7.0])
 
 dnl Not sure why this has to be so early.
 AC_CANONICAL_TARGET
@@ -13,7 +13,7 @@ AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE(foreign)
 
 dnl create a config.h file (Automake will add -DHAVE_CONFIG_H)
-AM_CONFIG_HEADER(config.h)
+AC_CONFIG_HEADERS([config.h])
 
 AC_SUBST(VERSION)
 
@@ -29,8 +29,7 @@ AC_PROG_CC
 dnl Checks for libraries.
 
 dnl Checks for header files.
-AC_HEADER_STDC
-AC_CHECK_HEADERS(unistd.h sys/param.h sys/time.h time.h sys/sysmacros.h string.h memory.h fcntl.h )
+AC_CHECK_HEADERS(stdint.h)
 
 
 AC_HEADER_MAJOR
@@ -93,4 +92,5 @@ case "$ld_suppports_dynamic_sizes" in
 esac
 
 
-AC_OUTPUT(Makefile include/Makefile device-specs/Makefile)
+AC_CONFIG_FILES([Makefile include/Makefile device-specs/Makefile])
+AC_OUTPUT
