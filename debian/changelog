@@ -1,3 +1,9 @@
+gnuprumcu (0.8.0) unstable; urgency=medium
+
+  * Add AM62x specs.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Fri, 20 May 2022 19:00:58 +0200
+
 gnuprumcu (0.7.0) unstable; urgency=medium
 
   * Add definitions for direct access to __R30 and __R31.
