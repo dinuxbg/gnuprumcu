@@ -2,7 +2,7 @@
  *
  * pru/io.h -- PRU I/O registers definitions
  *
- * Copyright (c) 2015-2019 Dimitar Dimitrov <dimitar@dinux.eu>
+ * Copyright (c) 2015-2022 Dimitar Dimitrov <dimitar@dinux.eu>
  * All rights reserved.
  */
 
@@ -129,12 +129,14 @@ static inline unsigned int read_r31(void) { return __R31; }
 #define XFR_ID_BANK2			12
 #define XFR_ID_PEER_CORE		14
 
-#if defined(__AM335X_PRU0__) || defined(__AM335X_PRU1__)
+#if defined(__AM335X__)
 #  include <pru/am335x.h>
 #elif defined(__SIM__)
    /* perhaps warn? */
-#elif defined(__AM572X_ICSS0_PRU0__) || defined(__AM572X_ICSS1_PRU0__) || defined(__AM572X_ICSS0_PRU1__) || defined(__AM572X_ICSS1_PRU1__)
+#elif defined(__AM572X__)
 #  include <pru/am572x.h>
+#elif defined(__TDA4VM__)
+#  include <pru/tda4vm.h>
 #else
 #  pragma message "No matching PRU instance variant found for <pru/io.h>"
 #endif
