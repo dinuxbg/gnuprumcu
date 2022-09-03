@@ -552,6 +552,9 @@ struct __PRU_INTC {
 };
 #define PRU_INTC	(*((struct __PRU_INTC *)__INTC_BASE))
 
+/* Alias used by TI's RPMSG examples. */
+#define CT_INTC		PRU_INTC
+
 /* ====================== PRU UART module ====================== */
 /* TODO */
 
@@ -725,5 +728,7 @@ struct __PRU_CFG {
 };
 #define PRU_CFG	(*((struct __PRU_CFG *)__CFG_BASE))
 
+/* Alias used in TI's RPMSG examples. */
+#define CT_CFG	PRU_CFG
 
 #endif

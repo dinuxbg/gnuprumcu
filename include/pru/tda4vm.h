@@ -536,6 +536,9 @@ struct __ICSS_INTC {
 };
 #define ICSS_INTC	(*((struct __ICSS_INTC *)__INTC_BASE))
 
+/* Alias used in TI's RPMSG examples. */
+#define CT_INTC		ICSS_INTC
+
 /* ====================== PRU UART module ====================== */
 /* TODO */
 
@@ -676,6 +679,9 @@ struct __ICSSG_CFG {
 
 /* Name per TI documentation. */
 #define ICSSG_CFG	(*((struct __ICSSG_CFG *)__CFG_BASE))
+
+/* Alias used in TI's RPMSG examples. */
+#define CT_CFG		ICSSG_CFG
 
 /* ====================== PRU PROT module ====================== */
 /* TODO */
