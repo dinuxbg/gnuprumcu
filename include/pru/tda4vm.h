@@ -687,7 +687,97 @@ struct __ICSSG_CFG {
 /* TODO */
 
 /* ====================== PRU RAT_SLICE module ====================== */
-/* TODO */
+
+/* Section "8.4.2 RAT Registers". */
+struct __RAT_PID_REG_S {
+	const volatile unsigned int REVMIN		: 6;
+	const volatile unsigned int CUSTOM		: 2;
+	const volatile unsigned int REVMAJ		: 3;
+	const volatile unsigned int REVRTL		: 5;
+	const volatile unsigned int FUNC		: 12;
+	const volatile unsigned int BU			: 2;
+	const volatile unsigned int SCHEME		: 2;
+};
+
+struct __RAT_CONFIG_REG_S {
+	const volatile unsigned int REGIONS		: 8;
+	const volatile unsigned int ADDRS		: 8;
+	const volatile unsigned int ADDR_WIDTH		: 8;
+	const volatile unsigned int __reserved_1	: 8;
+};
+
+struct __RAT_CTRL_REG_S {
+	volatile unsigned int SIZE			: 6;
+	volatile unsigned int __reserved_1		: 25;
+	volatile unsigned int EN			: 1;
+};
+
+/* BASE is a whole 32-bit value. */
+
+struct __RAT_TRANS_L_REG_S {
+	volatile unsigned int LOWER			: 32;
+};
+
+struct __RAT_TRANS_U_REG_S {
+	volatile unsigned int UPPER			: 16;
+	volatile unsigned int __reserved_1		: 16;
+};
+
+#define __RAT_STR2(A,B,C) A ## B ## C
+#define __RAT_STR(A,B,C) __RAT_STR2(A,B,C)
+
+#define __ICSSG_RAT_TRANS_DECL(i) \
+	union {								\
+		volatile unsigned int __RAT_STR(CTRL_,i,_REG);		\
+		struct __RAT_CTRL_REG_S __RAT_STR(CTRL_,i,_REG_bit);	\
+	};								\
+	union {								\
+		volatile unsigned int __RAT_STR(BASE_,i,_REG);		\
+	};								\
+	union {								\
+		volatile unsigned int __RAT_STR(TRANS_L_,i,_REG);	\
+		struct __RAT_TRANS_L_REG_S __RAT_STR(TRANS_L_,i,_REG_bit);\
+	};								\
+	union {								\
+		volatile unsigned int __RAT_STR(TRANS_U_,i,_REG);	\
+		struct __RAT_TRANS_U_REG_S __RAT_STR(TRANS_U_,i,_REG_bit);\
+	};
+
+
+struct __ICSSG_RAT_SLICE {
+	union {
+		volatile unsigned int PID_REG;
+		struct __RAT_PID_REG_S PID_REG_bit;
+	};
+	union {
+		volatile unsigned int CONFIG_REG;
+		struct __RAT_CONFIG_REG_S CONFIG_REG_bit;
+	};
+	unsigned int __gap1[6];
+	__ICSSG_RAT_TRANS_DECL(0)
+	__ICSSG_RAT_TRANS_DECL(1)
+	__ICSSG_RAT_TRANS_DECL(2)
+	__ICSSG_RAT_TRANS_DECL(3)
+	__ICSSG_RAT_TRANS_DECL(4)
+	__ICSSG_RAT_TRANS_DECL(5)
+	__ICSSG_RAT_TRANS_DECL(6)
+	__ICSSG_RAT_TRANS_DECL(7)
+	__ICSSG_RAT_TRANS_DECL(8)
+	__ICSSG_RAT_TRANS_DECL(9)
+	__ICSSG_RAT_TRANS_DECL(10)
+	__ICSSG_RAT_TRANS_DECL(11)
+	__ICSSG_RAT_TRANS_DECL(12)
+	__ICSSG_RAT_TRANS_DECL(13)
+	__ICSSG_RAT_TRANS_DECL(14)
+	__ICSSG_RAT_TRANS_DECL(15)
+	/* TODO - define the rest of the registers. */
+};
+
+#define ICSSG_RAT_SLICE0	(*((struct __ICSSG_RAT_SLICE *)__RAT_SLICE0_BASE))
+#define ICSSG_RAT_SLICE1	(*((struct __ICSSG_RAT_SLICE *)__RAT_SLICE1_BASE))
+
+#define CT_RAT0			ICSSG_RAT_SLICE0
+#define CT_RAT1			ICSSG_RAT_SLICE1
 
 /* ====================== PRU TASKS module ====================== */
 /* TODO */
