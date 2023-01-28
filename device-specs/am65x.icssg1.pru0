@@ -2,4 +2,4 @@
 -D__AM65X_ICSSG1_PRU0__ -D__AM65X_ICSSG1__ -D__AM65X__
 
 *link_device:
-%{!r:--gc-sections --defsym=__IMEM_SIZE=12K --defsym=__DMEM_SIZE=8K --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512}
+%{!r:--gc-sections --defsym=__IMEM_SIZE=12K --defsym=__DMEM_SIZE=8K --defsym=__HEAP_SIZE=32 --defsym=__STACK_SIZE=512 -z common-page-size=4 -z max-page-size=8}
