@@ -1,3 +1,9 @@
+gnuprumcu (0.9.1) unstable; urgency=medium
+
+  * Add linker commands to align sections.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Sun, 29 Jan 2023 19:17:41 +0200
+
 gnuprumcu (0.9.0) unstable; urgency=medium
 
   * Add TDA4VM (J721E) specs and headers.
