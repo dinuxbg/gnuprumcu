@@ -135,6 +135,8 @@ static inline unsigned int read_r31(void) { return __R31; }
    /* perhaps warn? */
 #elif defined(__AM572X__)
 #  include <pru/am572x.h>
+#elif defined(__AM62X__)
+#  include <pru/am62x.h>
 #elif defined(__TDA4VM__)
 #  include <pru/tda4vm.h>
 #else

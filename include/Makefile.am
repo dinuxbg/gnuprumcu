@@ -8,5 +8,6 @@ prudir = $(exec_prefix)/$(host_alias)/include
 nobase_pru_HEADERS = \
     pru/am335x.h \
     pru/am572x.h \
+    pru/am62x.h \
     pru/tda4vm.h \
     pru/io.h
