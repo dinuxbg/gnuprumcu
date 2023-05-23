@@ -1,0 +1,12 @@
+
+*.log
+*.trs
+*.o
+.deps
+check_am335x_offsets
+check_am335x_offsets2
+check_am62x_offsets
+check_am62x_offsets2
+check_tda4vm_offsets
+check_tda4vm_offsets2
+check_am572x_offsets

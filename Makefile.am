@@ -3,7 +3,7 @@
 # Copyright 2018-2021 Dimitar Dimitrov <dimitar@dinux.eu>
 # All rights reserved.
 
-SUBDIRS = include device-specs
+SUBDIRS = include device-specs tests
 
 EXTRA_DIST = debian README.md
 

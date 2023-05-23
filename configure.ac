@@ -92,5 +92,5 @@ case "$ld_suppports_dynamic_sizes" in
 esac
 
 
-AC_CONFIG_FILES([Makefile include/Makefile device-specs/Makefile])
+AC_CONFIG_FILES([Makefile include/Makefile device-specs/Makefile tests/Makefile])
 AC_OUTPUT

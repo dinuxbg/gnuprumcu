@@ -20,3 +20,6 @@ ldscripts/Makefile.in
 missing
 stamp-h1
 config.h.in~
+*~
+depcomp
+test-driver

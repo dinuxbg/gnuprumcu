@@ -9,5 +9,9 @@
 
 	make distcheck
 
- 4. Install and test different -mmcu= values in some PRU example project.
- 5. Git push to publish.
+ 4. Run the testsuite:
+
+	make check
+
+ 5. Install and test different -mmcu= values in some PRU example project.
+ 6. Git push to publish.
