@@ -650,7 +650,7 @@ struct __PRU_CFG_IEPCLK_S {
 struct __PRU_CFG_SPP_S {
 	volatile unsigned int PRU1_PAD_HP_EN	 : 1;
 	volatile unsigned int XFR_SHIFT_EN		 : 1;
-	const volatile unsigned int __reserved_1 : 31;
+	const volatile unsigned int __reserved_1 : 30;
 };
 
 
