@@ -3,6 +3,8 @@
 # Copyright 2023 Dimitar Dimitrov <dimitar@dinux.eu>
 # All rights reserved.
 
+if ENABLE_TESTSUITE
+
 TESTS = check.sh
 EXTRA_DIST = check.sh test-common.h
 
@@ -32,3 +34,5 @@ check_tda4vm_offsets_SOURCES = check_tda4vm_offsets.c
 check_tda4vm_offsets_CFLAGS = -mmcu=tda4vm.icssg1.pru0
 check_tda4vm_offsets2_SOURCES = check_tda4vm_offsets2.c
 check_tda4vm_offsets2_CFLAGS = -mmcu=tda4vm.icssg1.pru1
+
+endif

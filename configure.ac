@@ -68,6 +68,9 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([
      ],
      [ld_suppports_dynamic_sizes="yes"])
 
+dnl Disable testsuite if a crosstoolchain cannot be verified.
+AM_CONDITIONAL([ENABLE_TESTSUITE], [test $with_toolchain_check = yes])
+
 dnl ==========================================================================
 
 dnl Checks for library functions.
