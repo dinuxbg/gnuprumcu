@@ -77,7 +77,7 @@ struct __PRU_CONTROL_S {
 	volatile unsigned int __reserved_1		: 3;
 	volatile unsigned int SINGLE_STEP		: 1;
 	volatile unsigned int __reserved_2		: 5;
-	const volatile unsigned int BIG_ENDIAN		: 1;
+	const volatile unsigned int PRU_BIG_ENDIAN	: 1;
 	const volatile unsigned int PDSP_STATE		: 1;
 	volatile unsigned int PCOUNTER_RST_VAL		: 16;
 };
