@@ -18,21 +18,21 @@ check_PROGRAMS = \
 	check_tda4vm_offsets2
 
 check_am335x_offsets_SOURCES = check_am335x_offsets.c
-check_am335x_offsets_CFLAGS = -mmcu=am335x.pru0
+check_am335x_offsets_CFLAGS = -B$(top_srcdir) -mmcu=am335x.pru0
 check_am335x_offsets2_SOURCES = check_am335x_offsets2.c
-check_am335x_offsets2_CFLAGS = -mmcu=am335x.pru1
+check_am335x_offsets2_CFLAGS = -B$(top_srcdir) -mmcu=am335x.pru1
 
 check_am62x_offsets_SOURCES = check_am62x_offsets.c
-check_am62x_offsets_CFLAGS = -mmcu=am62x.pru0
+check_am62x_offsets_CFLAGS = -B$(top_srcdir) -mmcu=am62x.pru0
 check_am62x_offsets2_SOURCES = check_am62x_offsets2.c
-check_am62x_offsets2_CFLAGS = -mmcu=am62x.pru1
+check_am62x_offsets2_CFLAGS = -B$(top_srcdir) -mmcu=am62x.pru1
 
 check_am572x_offsets_SOURCES = check_am572x_offsets.c
-check_am572x_offsets_CFLAGS = -mmcu=am572x.icss1.pru0
+check_am572x_offsets_CFLAGS = -B$(top_srcdir) -mmcu=am572x.icss1.pru0
 
 check_tda4vm_offsets_SOURCES = check_tda4vm_offsets.c
-check_tda4vm_offsets_CFLAGS = -mmcu=tda4vm.icssg1.pru0
+check_tda4vm_offsets_CFLAGS = -B$(top_srcdir) -mmcu=tda4vm.icssg1.pru0
 check_tda4vm_offsets2_SOURCES = check_tda4vm_offsets2.c
-check_tda4vm_offsets2_CFLAGS = -mmcu=tda4vm.icssg1.pru1
+check_tda4vm_offsets2_CFLAGS = -B$(top_srcdir) -mmcu=tda4vm.icssg1.pru1
 
 endif
