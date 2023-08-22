@@ -3,6 +3,7 @@
 *.trs
 *.o
 .deps
+check
 check_am335x_offsets
 check_am335x_offsets2
 check_am62x_offsets
