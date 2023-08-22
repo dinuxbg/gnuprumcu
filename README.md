@@ -25,4 +25,4 @@ Use the standard configure and make steps.
 ## Creating Debian Package
 
 	debuild -i -us -uc -b
-	ls -l ../gnupru_*.deb
+	ls -l ../gnuprumcu_*.deb
