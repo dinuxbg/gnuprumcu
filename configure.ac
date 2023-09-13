@@ -28,12 +28,8 @@ AC_PROG_CC
 
 dnl Checks for libraries.
 
-dnl Checks for header files.
+dnl Checks for additional header files.
 AC_CHECK_HEADERS(stdint.h)
-
-
-AC_HEADER_MAJOR
-AC_FUNC_ALLOCA
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 
