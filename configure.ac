@@ -11,6 +11,7 @@ dnl Not sure why this has to be so early.
 AC_CANONICAL_TARGET
 
 AM_INIT_AUTOMAKE(foreign)
+AM_SILENT_RULES([yes])
 
 dnl create a config.h file (Automake will add -DHAVE_CONFIG_H)
 AC_CONFIG_HEADERS([config.h])
