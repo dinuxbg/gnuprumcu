@@ -34,14 +34,14 @@ AC_CHECK_HEADERS(stdint.h)
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 
-AC_ARG_WITH([toolchain-check],
-	    [AS_HELP_STRING([--without-toolchain-check],
-			    [disable pru toolchain verification])],
-	    [],
-	    [with_toolchain_check=yes])
+AC_ARG_ENABLE([toolchain-check],
+	      [AS_HELP_STRING([--without-toolchain-check],
+			      [disable pru toolchain verification])],
+	      [],
+	      [enable_toolchain_check=yes])
 
 dnl ==========================================================================
-AS_IF([test "x$with_toolchain_check" != xno],
+AS_IF([test "x$enable_toolchain_check" != xno],
       [
 
 dnl Not sure why configure picks system compiler, even when --host=pru
@@ -66,7 +66,7 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([
      [ld_suppports_dynamic_sizes="yes"])
 
 dnl Disable testsuite if a crosstoolchain cannot be verified.
-AM_CONDITIONAL([ENABLE_TESTSUITE], [test $with_toolchain_check = yes])
+AM_CONDITIONAL([ENABLE_TESTSUITE], [test $enable_toolchain_check = yes])
 
 dnl ==========================================================================
 
