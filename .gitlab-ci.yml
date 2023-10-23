@@ -4,9 +4,9 @@ stages:
   - build
 
 before_script:
-  - apt-get update -qq && apt-get install -y -qq pru-gcc binutils-pru devscripts build-essential lintian
+  - apt-get update -qq && apt-get install -y -qq gcc-pru binutils-pru devscripts build-essential lintian
 
-build:
+build-distcheck:
   tags:
     - docker-arm64
   stage: build
@@ -16,7 +16,7 @@ build:
     - make
     - export DISTCHECK_CONFIGURE_FLAGS="--host=pru --disable-toolchain-check" ; make distcheck
 
-debian_package:
+build-debian-package:
   tags:
     - docker-arm64
   stage: build
