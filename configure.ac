@@ -35,7 +35,7 @@ AC_CHECK_HEADERS(stdint.h)
 dnl Checks for typedefs, structures, and compiler characteristics.
 
 AC_ARG_ENABLE([toolchain-check],
-	      [AS_HELP_STRING([--without-toolchain-check],
+	      [AS_HELP_STRING([--disable-toolchain-check],
 			      [disable pru toolchain verification])],
 	      [],
 	      [enable_toolchain_check=yes])
