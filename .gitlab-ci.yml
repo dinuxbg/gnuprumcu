@@ -2,17 +2,24 @@ image: robertcnelson/debian-bookworm-beagle-devscripts:latest
 
 stages:
   - build
+  - test
 
 before_script:
-  - apt-get update -qq && apt-get install -y -qq gcc-pru binutils-pru devscripts build-essential lintian
+  - apt-get update -qq && apt-get install -y -qq gcc-pru binutils-pru devscripts build-essential lintian git
 
 build-distcheck:
   tags:
     - docker-arm64
   stage: build
+  artifacts:
+    paths:
+      - build/gnuprumcu-*.tar.gz
+    expire_in: 1 week
   script:
     - autoreconf -vfi
-    - ./configure --prefix=/usr/local --host=pru
+    - mkdir build
+    - cd build
+    - ../configure --prefix=/usr/local --host=pru
     - make
     - export DISTCHECK_CONFIGURE_FLAGS="--host=pru --disable-toolchain-check" ; make distcheck
 
@@ -20,5 +27,21 @@ build-debian-package:
   tags:
     - docker-arm64
   stage: build
+  artifacts:
+    paths:
+      - ../*.deb
+    expire_in: 1 week
   script:
     - debuild -i -us -uc -b
+
+test-compile-examples:
+  tags:
+    - docker-arm64
+  stage: test
+  dependencies:
+    - build-debian-package
+  script:
+    - dpkg -i ../gnuprumcu*.deb
+    - git clone --depth=1 https://github.com/dinuxbg/pru-gcc-examples
+    - cd pru-gcc-examples/
+    - make check-build
