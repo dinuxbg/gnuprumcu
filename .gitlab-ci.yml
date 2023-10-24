@@ -29,10 +29,12 @@ build-debian-package:
   stage: build
   artifacts:
     paths:
-      - ../*.deb
+      - ./*.deb
     expire_in: 1 week
   script:
     - debuild -i -us -uc -b
+    - ls ../*.deb
+    - cp ../gnuprumcu*.deb .
 
 test-compile-examples:
   tags:
@@ -41,7 +43,7 @@ test-compile-examples:
   dependencies:
     - build-debian-package
   script:
-    - dpkg -i ../gnuprumcu*.deb
+    - dpkg -i ./gnuprumcu*.deb
     - git clone --depth=1 https://github.com/dinuxbg/pru-gcc-examples
     - cd pru-gcc-examples/
     - make check-build
