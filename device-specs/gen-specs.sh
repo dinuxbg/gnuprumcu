@@ -6,6 +6,9 @@
 
 set -e
 
+# Where to document the list of supported targets.
+MD_MCU_LIST=../MCU-LIST.md
+
 # Generate spec file for one PRU core variant.
 #   soc        : SoC name (e.g. am335x)
 #   icss       : ICSS subsystem name (e.g. icssg0)
@@ -54,7 +57,11 @@ gen_spec()
   echo >> "${outf}"
   echo '*link_device:' >> "${outf}"
   echo "%{!r:--gc-sections --defsym=__IMEM_SIZE=${imem_size} --defsym=__DMEM_SIZE=${dmem_size} --defsym=__HEAP_SIZE=${heap_size} --defsym=__STACK_SIZE=${stack_size} -z common-page-size=${common_page_size} -z max-page-size=${max_page_size}}" >> "${outf}"
+
+  echo " * ${outf}" >> $MD_MCU_LIST
 }
+
+echo '# List of PRU device specs' > $MD_MCU_LIST
 
 # SPRUH73Q, 4.1.1, Features
 for c in pru0 pru1; do

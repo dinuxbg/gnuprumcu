@@ -5,7 +5,7 @@
 
 SUBDIRS = include device-specs tests
 
-EXTRA_DIST = debian README.md
+EXTRA_DIST = debian README.md MCU-LIST.md
 
 # Needed for "make distcheck"
 DISTCHECK_CONFIGURE_FLAGS ?= --host=pru
