@@ -3,6 +3,10 @@
 # output every command that modifies files on the build system.
 #export DH_VERBOSE = 1
 
+# Disable security features which are not supported by PRU.
+# Needed to get configure going, without spurious pru-gcc errors.
+export DEB_BUILD_MAINT_OPTIONS=hardening=-format,-fortify,-stackprotector,-stackprotectorstrong
+
 # Since pru-gcc is packaged with --prefix=/usr/lib, we must follow suit.
 
 %:
