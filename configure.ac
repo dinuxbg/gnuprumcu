@@ -5,7 +5,7 @@ dnl
 dnl Copyright 2018-2023 Dimitar Dimitrov <dimitar@dinux.eu>
 dnl All rights reserved.
 
-AC_INIT([gnuprumcu],[0.9.4])
+AC_INIT([gnuprumcu],[0.9.5])
 
 dnl Not sure why this has to be so early.
 AC_CANONICAL_TARGET

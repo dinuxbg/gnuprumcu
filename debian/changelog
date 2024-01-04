@@ -1,3 +1,9 @@
+gnuprumcu (0.9.5) unstable; urgency=low
+
+  * Minor build system cleanups.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Thu, 04 Jan 2024 23:09:20 +0200
+
 gnuprumcu (0.9.4) unstable; urgency=medium
 
   * Do not use BIG_ENDIAN for a struct field name.
