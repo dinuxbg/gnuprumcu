@@ -44,6 +44,8 @@ gen_spec()
     common_page_size=1
     max_page_size=1
   elif [ "x${armarch}" = "xarm64" ]; then
+    # remoteproc running on 64-bit hosts
+    # has stricter alignment requirements.
     common_page_size=4
     max_page_size=8
   else
@@ -84,9 +86,10 @@ for i in icss0 icss1; do
   done
 done
 
-# SPRUIV7 – DECEMBER 2021, 6.4.1., PRUSS-M Overview
+# SPRUIV7B – MAY 2022 – REVISED SEPTEMBER 2023
+# 7.4.3.4.1.1 PRUSS Local Instruction Memory Map
 for c in pru0 pru1; do
-  gen_spec am62x arm64 "" $c 12K 8K 32 512
+  gen_spec am62x arm64 "" $c 16K 8K 32 512
 done
 
 # SPRUIM2B, 6.4.1.1 PRU_ICSSG Key Features
