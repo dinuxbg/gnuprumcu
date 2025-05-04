@@ -1,3 +1,9 @@
+gnuprumcu (0.9.6) unstable; urgency=low
+
+  * Update IMEM size for AM62 to 16KB, per latest TI documentation.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Sun, 04 May 2025 21:06:20 +0200
+
 gnuprumcu (0.9.5) unstable; urgency=low
 
   * Minor build system cleanups.
