@@ -5,7 +5,9 @@
 
 # Disable security features which are not supported by PRU.
 # Needed to get configure going, without spurious pru-gcc errors.
-export DEB_BUILD_MAINT_OPTIONS=hardening=-format,-fortify,-stackprotector,-stackprotectorstrong
+#
+# TODO - are target and host mixed here for packaging?
+export DEB_BUILD_MAINT_OPTIONS=hardening=-format,-fortify,-stackprotector,-stackprotectorstrong,-stackclash,-branch
 
 # Since pru-gcc is packaged with --prefix=/usr/lib, we must follow suit.
 

@@ -1,3 +1,9 @@
+gnuprumcu (0.9.7) unstable; urgency=low
+
+  * Minor packaging update for trixie.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Fri, 30 May 2025 08:09:20 +0200
+
 gnuprumcu (0.9.6) unstable; urgency=low
 
   * Update IMEM size for AM62 to 16KB, per latest TI documentation.
