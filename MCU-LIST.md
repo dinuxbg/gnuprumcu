@@ -1,4 +1,6 @@
 # List of PRU device specs
+ * am18xx.pru0
+ * am18xx.pru1
  * am335x.pru0
  * am335x.pru1
  * am437x.icss0.pru0

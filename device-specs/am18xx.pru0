@@ -1,0 +1,8 @@
+*cpp_device:
+-D__AM18XX_PRU0__ -D__AM18XX__
+
+*link_device:
+%{!r:--gc-sections --defsym=__IMEM_SIZE=8K --defsym=__DMEM_SIZE=512 --defsym=__HEAP_SIZE=0 --defsym=__STACK_SIZE=64 -z common-page-size=1 -z max-page-size=1}
+
+*self_spec:
+-mno-loop -mno-mul -mno-fillzero

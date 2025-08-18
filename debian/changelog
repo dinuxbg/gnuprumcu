@@ -1,3 +1,9 @@
+gnuprumcu (0.9.8) unstable; urgency=low
+
+  * Added experimental support for AM1808. Requires GCC16.
+
+ -- Dimitar Dimitrov <dimitar@dinux.eu>  Tue, 19 Aug 2025 19:50:12 +0200
+
 gnuprumcu (0.9.7) unstable; urgency=low
 
   * Minor packaging update for trixie.
