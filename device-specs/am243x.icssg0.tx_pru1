@@ -1,0 +1,5 @@
+*cpp_device:
+-D__AM243X_ICSSG0_TX_PRU1__ -D__AM243X_ICSSG0__ -D__AM243X__
+
+*link_device:
+%{!r:--gc-sections --defsym=__IMEM_SIZE=6K --defsym=__DMEM_SIZE=0 --defsym=__HEAP_SIZE=0 --defsym=__STACK_SIZE=0 -z common-page-size=1 -z max-page-size=1}

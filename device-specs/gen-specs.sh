@@ -87,6 +87,23 @@ for c in pru0 pru1; do
   gen_spec V1 am18xx arm32 "" $c 8K 512 0 64
 done
 
+# SPRUJB6B, 7.3.1 PRU-ICSS Overview
+for i in icss0 icss1; do
+  for c in pru0 pru1; do
+    gen_spec V3 am261x arm32 $i $c 12K 8K 32 512
+  done
+done
+
+# SPRUJ17I, 7.2.1.1 PRU-ICSS Key Features
+for c in pru0 pru1; do
+  gen_spec V3 am263x arm32 "" $c 12K 8K 32 512
+done
+
+# SPRUJ55D, 7.3.1.1 PRU-ICSS Key Features
+for c in pru0 pru1; do
+  gen_spec V3 am263px arm32 "" $c 12K 8K 32 512
+done
+
 # SPRUH73Q, 4.1.1, Features
 for c in pru0 pru1; do
   gen_spec V3 am335x arm32 "" $c 8K 8K 32 512
@@ -114,12 +131,15 @@ for c in pru0 pru1; do
   gen_spec V3 am62x arm64 "" $c 16K 8K 32 512
 done
 
-# SPRUIM2B, 6.4.1.1 PRU_ICSSG Key Features
+# SPRUIM2H, 6.4.1.1 PRU_ICSSG Key Features
 for i in icssg0 icssg1; do
   for c in 0 1; do
     gen_spec V3 am64x arm64 $i pru$c 12K 8K 32 512
+    gen_spec V3 am243x arm32 $i pru$c 12K 8K 32 512
     gen_spec V3 am64x arm64 $i rtu_pru$c 8K 0 0 0
+    gen_spec V3 am243x arm32 $i rtu_pru$c 8K 0 0 0
     gen_spec V3 am64x arm64 $i tx_pru$c 6K 0 0 0
+    gen_spec V3 am243x arm32 $i tx_pru$c 6K 0 0 0
   done
 done
 

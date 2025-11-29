@@ -1,6 +1,14 @@
 # List of PRU device specs
  * am18xx.pru0
  * am18xx.pru1
+ * am261x.icss0.pru0
+ * am261x.icss0.pru1
+ * am261x.icss1.pru0
+ * am261x.icss1.pru1
+ * am263x.pru0
+ * am263x.pru1
+ * am263px.pru0
+ * am263px.pru1
  * am335x.pru0
  * am335x.pru1
  * am437x.icss0.pru0
@@ -14,17 +22,29 @@
  * am62x.pru0
  * am62x.pru1
  * am64x.icssg0.pru0
+ * am243x.icssg0.pru0
  * am64x.icssg0.rtu_pru0
+ * am243x.icssg0.rtu_pru0
  * am64x.icssg0.tx_pru0
+ * am243x.icssg0.tx_pru0
  * am64x.icssg0.pru1
+ * am243x.icssg0.pru1
  * am64x.icssg0.rtu_pru1
+ * am243x.icssg0.rtu_pru1
  * am64x.icssg0.tx_pru1
+ * am243x.icssg0.tx_pru1
  * am64x.icssg1.pru0
+ * am243x.icssg1.pru0
  * am64x.icssg1.rtu_pru0
+ * am243x.icssg1.rtu_pru0
  * am64x.icssg1.tx_pru0
+ * am243x.icssg1.tx_pru0
  * am64x.icssg1.pru1
+ * am243x.icssg1.pru1
  * am64x.icssg1.rtu_pru1
+ * am243x.icssg1.rtu_pru1
  * am64x.icssg1.tx_pru1
+ * am243x.icssg1.tx_pru1
  * am65x.icssg0.pru0
  * am65x.icssg0.rtu_pru0
  * am65x.icssg0.tx_pru0
