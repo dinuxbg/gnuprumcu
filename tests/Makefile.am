@@ -5,11 +5,10 @@
 
 if ENABLE_TESTSUITE
 
-TESTS = check-run.sh check-inspect.sh
-EXTRA_DIST = check-run.sh check-inspect.sh test-common.h
+TESTS = check-run.sh
+EXTRA_DIST = check-run.sh test-common.h
 
 check_PROGRAMS = \
-	check_am18xx_options \
 	check_am335x_options \
 	check_am335x_offsets \
 	check_am335x_offsets2 \
@@ -19,8 +18,16 @@ check_PROGRAMS = \
 	check_tda4vm_offsets \
 	check_tda4vm_offsets2
 
+if ENABLE_AM18XX
+TESTS += check-inspect.sh
+EXTRA_DIST += check-inspect.sh
+
+check_PROGRAMS += \
+	check_am18xx_options
+
 check_am18xx_options_SOURCES = check_am18xx_options.c
 check_am18xx_options_CFLAGS = -B$(top_srcdir) -mmcu=am18xx.pru0 -minrt
+endif
 
 check_am335x_options_SOURCES = check_am335x_options.c
 check_am335x_options_CFLAGS = -B$(top_srcdir) -mmcu=am335x.pru0 -minrt

@@ -68,6 +68,18 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([
 dnl Disable testsuite if a crosstoolchain cannot be verified.
 AM_CONDITIONAL([ENABLE_TESTSUITE], [test $enable_toolchain_check = yes])
 
+dnl Check if GCC supports flags for AM18xx
+AC_MSG_CHECKING(GCC support for AM18xx)
+old_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -mno-loop -mno-mul -mno-fillzero"
+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
+    int test;
+    ])],  [gcc_supports_am18xx="yes"], [gcc_supports_am18xx="no"])
+CFLAGS="$old_CFLAGS"
+AC_MSG_RESULT($gcc_supports_am18xx)
+
+AM_CONDITIONAL([ENABLE_AM18XX], [test $gcc_supports_am18xx = yes])
+
 dnl ==========================================================================
 
 dnl Checks for library functions.

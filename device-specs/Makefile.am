@@ -5,8 +5,6 @@
 
 
 dist_pru_DATA = \
-    am18xx.pru0 \
-    am18xx.pru1 \
     am243x.icssg0.pru0 \
     am243x.icssg0.pru1 \
     am243x.icssg0.rtu_pru0 \
@@ -81,5 +79,11 @@ dist_pru_DATA = \
     tda4vm.icssg1.rtu_pru1 \
     tda4vm.icssg1.tx_pru0 \
     tda4vm.icssg1.tx_pru1
+
+if ENABLE_AM18XX
+dist_pru_DATA += \
+    am18xx.pru0 \
+    am18xx.pru1
+endif
 
 prudir = $(exec_prefix)/$(host_alias)/lib/device-specs
