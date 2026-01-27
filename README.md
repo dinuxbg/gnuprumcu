@@ -1,5 +1,3 @@
-![build status](https://git.beagleboard.org/beagleboard/gnuprumcu/badges/master/pipeline.svg)
-
 # Device specs and I/O headers for PRU MCU variants
 
 ## Introduction
