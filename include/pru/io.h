@@ -124,10 +124,20 @@ static inline unsigned int read_r31(void) { return __R31; }
 
 /* XFR Device ID numbers */
 #define XFR_ID_MAC			0
+#define XFR_ID_CRC			1
+#define XFR_ID_STITCH_FIFO64		8
+#define XFR_ID_QUEUE_PTR		9
 #define XFR_ID_BANK0			10
 #define XFR_ID_BANK1			11
 #define XFR_ID_BANK2			12
 #define XFR_ID_PEER_CORE		14
+#define XFR_ID_IPC_SPAD			15
+#define XFR_ID_SPIN_ID			144
+#define XFR_ID_SPIN_ID0			145
+#define XFR_ID_SPIN_ID1			146
+#define XFR_ID_BSWAP			160
+#define XFR_ID_BSWAP_4_7		161
+#define XFR_ID_BSWAP_4_16		162
 
 #if defined(__AM335X__)
 #  include <pru/am335x.h>
