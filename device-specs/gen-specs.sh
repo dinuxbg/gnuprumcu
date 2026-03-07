@@ -134,12 +134,12 @@ done
 # SPRUIM2H, 6.4.1.1 PRU_ICSSG Key Features
 for i in icssg0 icssg1; do
   for c in 0 1; do
-    gen_spec V3 am64x arm64 $i pru$c 12K 8K 32 512
-    gen_spec V3 am243x arm32 $i pru$c 12K 8K 32 512
-    gen_spec V3 am64x arm64 $i rtu_pru$c 8K 0 0 0
-    gen_spec V3 am243x arm32 $i rtu_pru$c 8K 0 0 0
-    gen_spec V3 am64x arm64 $i tx_pru$c 6K 0 0 0
-    gen_spec V3 am243x arm32 $i tx_pru$c 6K 0 0 0
+    gen_spec V4 am64x arm64 $i pru$c 12K 8K 32 512
+    gen_spec V4 am243x arm32 $i pru$c 12K 8K 32 512
+    gen_spec V4 am64x arm64 $i rtu_pru$c 8K 0 0 0
+    gen_spec V4 am243x arm32 $i rtu_pru$c 8K 0 0 0
+    gen_spec V4 am64x arm64 $i tx_pru$c 6K 0 0 0
+    gen_spec V4 am243x arm32 $i tx_pru$c 6K 0 0 0
   done
 done
 
@@ -147,17 +147,17 @@ done
 # SR1.0 is assumed deprecated.
 for i in icssg0 icssg1 icssg2; do
   for c in 0 1; do
-    gen_spec V3 am65x arm64 $i pru$c 12K 8K 32 512
-    gen_spec V3 am65x arm64 $i rtu_pru$c 8K 0 0 0
-    gen_spec V3 am65x arm64 $i tx_pru$c 6K 0 0 0
+    gen_spec V4 am65x arm64 $i pru$c 12K 8K 32 512
+    gen_spec V4 am65x arm64 $i rtu_pru$c 8K 0 0 0
+    gen_spec V4 am65x arm64 $i tx_pru$c 6K 0 0 0
   done
 done
 
 # SPRUIL1B, 6.6.1.1 PRU_ICSSG Key Features
 for i in icssg0 icssg1; do
   for c in 0 1; do
-    gen_spec V3 tda4vm arm64 $i pru$c 12K 8K 32 512
-    gen_spec V3 tda4vm arm64 $i rtu_pru$c 8K 0 0 0
-    gen_spec V3 tda4vm arm64 $i tx_pru$c 6K 0 0 0
+    gen_spec V4 tda4vm arm64 $i pru$c 12K 8K 32 512
+    gen_spec V4 tda4vm arm64 $i rtu_pru$c 8K 0 0 0
+    gen_spec V4 tda4vm arm64 $i tx_pru$c 6K 0 0 0
   done
 done
