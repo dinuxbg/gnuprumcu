@@ -8,6 +8,7 @@ set -e
 
 # Where to document the list of supported targets.
 MD_MCU_LIST=../MCU-LIST.md
+MD_MCU_LIST_TMP=`mktemp`
 
 # Generate spec file for one PRU core variant.
 #   version    : PRU core version
@@ -77,10 +78,8 @@ gen_spec()
     echo '-mno-loop -mno-mul -mno-fillzero' >> "${outf}"
   fi
 
-  echo " * ${outf}" >> $MD_MCU_LIST
+  echo " * ${outf}" >> ${MD_MCU_LIST_TMP}
 }
-
-echo '# List of PRU device specs' > $MD_MCU_LIST
 
 # SPRUH82C, 13.8.1.2 Global Memory Map
 for c in pru0 pru1; do
@@ -161,3 +160,8 @@ for i in icssg0 icssg1; do
     gen_spec V4 tda4vm arm64 $i tx_pru$c 6K 0 0 0
   done
 done
+
+
+echo '# List of PRU device specs' > $MD_MCU_LIST
+cat ${MD_MCU_LIST_TMP} | sort >> ${MD_MCU_LIST}
+rm -f ${MD_MCU_LIST_TMP}
