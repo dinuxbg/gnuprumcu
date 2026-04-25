@@ -2,10 +2,10 @@ dnl Process this file with autoconf to produce a configure script.
 
 dnl SPDX-License-Identifier: BSD-2-Clause-FreeBSD
 dnl
-dnl Copyright 2018-2024 Dimitar Dimitrov <dimitar@dinux.eu>
+dnl Copyright 2018-2026 Dimitar Dimitrov <dimitar@dinux.eu>
 dnl All rights reserved.
 
-AC_INIT([gnuprumcu],[1.0.0-rc1])
+AC_INIT([gnuprumcu],[1.0.0])
 
 dnl Not sure why this has to be so early.
 AC_CANONICAL_TARGET
